@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CMPS 162: Module 6 Programming Project</title>
+  <!--- DON'T CHANGE THE STYLES --->
+<style>
+  * { font-family: monospace; }
+  .degreeBox {display: inline-block;}
+  #fahrenheit,#celsius,#boomText {line-height: 2.5em;font-size: 1.5em;padding: 0 .5em;}  
+  section{width:50%;margin: 1em auto;padding:1em;text-align: center;border-bottom: 1px dotted green;}
+  #boomText{width:124px;}
+</style>
+<script>
+
+//---------------------------//
+// The Document Object Model //
+//---------------------------//
+console.log("The Document Object Model");
+
+// 1. Complete the Fahrenheit to Celsius converter below. The following tasks
+//    remain: (1) on the blur event in the Fahrenheit input field call the
+//    fahrenheitToCelsius function, (2) on the blur event in the Celsius input
+//    field call the celsiusToFahrenheit function, (3) implement the
+//    fahrenheitToCelsius function that reads from the Fahrenheit input field,
+//    performs the conversion, and writes to the Celsius field, and
+//    (4) implement the celsiusToFahrenheit function that reads from the Celsius
+//    input field, performs the conversion, and writes to the Fahrenheit field.
+//    The conversion formulas are here: https://en.wikipedia.org/wiki/Fahrenheit
+//    An example is that 80 degrees Fahrenheit should be 26.7 degrees Celsius
+//    (and vice versa).
+
+function fahrenheitToCelsius() {
+  var temp = parseFloat(document.getElementById("fahrenheit").value);
+var cel = (5.0 / 9.0 * (temp-32)).toFixed(2);
+document.getElementById("celsius").value = cel;
+  // implement your program here
+  // ...
+}
+
+function celsiusToFahrenheit() {
+  var temp = parseFloat(document.getElementById("celsius").value);
+var far = (9.0 / 5.0 * temp + 32).toFixed(2);
+document.getElementById("fahrenheit").value = far;
+}
+
+
+// 2. Write a function that replaces the button with the id "boomText" in the
+// DOM with an image. The function should: 
+//      a. Remove the boomText button node from the DOM.
+//      b. Create a new image (img) node in the same place in the DOM where 
+//         the button once was. The attributes are:
+//              + src = "https://www.harrisburgu.edu/wp-content/uploads/Boom-1258x686.png"
+//              + height = 49
+//              + alt = "This is an image that says boom!"
+//              + id="boom"
+//      c. Call the function when the "boomText" button is clicked.   
+
+function getCount() {
+var numOfElements = document.getElementsByTagName("body")[0].childElementCount;
+console.log(numOfElements);
+}
+
+// 3. Write a function that appends a new paragraph (p) node with the id 
+//    "childNode" inside the div tag that is inside the section with the 
+//    "section-3" id. NOTE: Do not change the existing HTML. The function 
+//    should:
+//        a. put your name in the innerText or innerHTML property,
+//        b. change the style of the new node in at least three ways... font
+//           size, text position, colors, for example. Be creative. But, I 
+//           need to be able to read your name and your code should not 
+//           interfer with the rest of the page.
+//        c. call the function when the page loads.
+
+function getCount() {
+var numOfElements = document.getElementsByTagName("P").length;
+console.log(numOfElements);
+}
+
+</script>
+</head>
+<body>
+
+  <section id="section-1">
+    <div class="degreeBox">
+        <label for="fahrenheit">Fahrenheit</label><br>
+        <input type="text" id="fahrenheit">
+    </div>
+    - to -
+    <div class="degreeBox">
+        <label for="celsius">Celsius</label><br>
+        <input type="text" id="celsius">
+    </div>
+</section>
+
+<section id="section-2">
+  <button  id="boomText">Boom</button>
+</section>
+
+<section id="section-3">
+    <div>
+
+    </div>
+</section>
+
+</body>
+</html>
