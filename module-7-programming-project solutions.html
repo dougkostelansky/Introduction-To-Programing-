@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CMPS 162: Module 7 Programming Project</title>
+<style>* { font-family: monospace; }</style>
+<script>
+
+//---------//
+// Objects //
+//---------//
+console.log("Objects");
+
+// 1. Complete the implementation of the Circle object that has methods to
+//    calculate the area and circumference. You can find a start of the code
+//    and how the object is supposed to be used below. 
+//    NOTE: that the initial code has several lines commented out that 
+//    you must complete.
+//    HINT: use the Math.PI to get the value of Pi.
+//    Google how to calculate the area and circumference of a circle if 
+//    you do not recall.
+//    Round to the nearest 100th e.g. n.nn
+
+function Circle(radius) {
+  this.radius = radius;
+    }
+
+    // implement the methods
+    Circle.prototype.getArea = function() {
+      return 3.14 * this.radius * this.radius;
+    }
+
+    Circle.prototype.getCircumference = function() {
+      return 2 * 3.14 * this.radius;
+    }
+
+    // create the Circle object
+    var circle = new Circle(10);
+
+    // calculate area, not working yet!
+    var area = circle.getArea();
+
+    // calculate circumference, not working yet!
+    var circumference = circle.getCircumference();
+
+    // show output to user
+    console.log('Area of circle: ' + area);
+    console.log('Circumference of circle: ' + circumference);
+
+// 2. Write the same implementation for a rectangle. Note that the constructor
+//    takes two parameters in this case: width and height. There should be two 
+//    methods, getArea and getPerimeter.
+//
+//    Like exercise 1, instanciate a rectangle object using the values width=10
+//    and height = 5 then log the area and perimeter to the console.
+
+
+// 2. Write the same implementation for a rectangle. Note that the constructor
+    // takes two parameters in this case: width and height.
+
+    function Rectangle(width, height) {
+      this.width = width;
+      this.height = height;
+    }
+
+    // implement the methods
+    Rectangle.prototype.getArea = function() {
+      return this.width * this.height;
+    }
+
+    Rectangle.prototype.getCircumference = function() {
+      return 2 * (this.width + this.height);
+    }
+
+    //-----------------//
+    // Browser Control //
+    //-----------------//
+    console.log("Browser Control");
+
+
+//-----------------//
+// Browser Control //
+//-----------------//
+console.log("Browser Control");
+
+// 1. Create a function that:
+//    (1) Opens a popup window that covers roughly one quarter of the current 
+//        browser. 
+//        a. You will need get the window's outer height and outer width, divide 
+//        them each by two, and then open a new window using the calculated height 
+//        and width values.
+//        b. The function should accept an arguement called url. The value of
+//        this argument will be the url of the web page that opens in the popup.
+//        c. Add an onclick event to the button below to execute the pop-up
+//        function. Pass the url https://it.pointpark.edu/ in the call.
+
+
+ // 1. Create a link in the HTML body that onclick does the following things:
+
+ var input = document.createElement("input");
+    input.type = "button";
+    input.value = "Click me to check popup!";
+    input.addEventListener("click", function() {
+      var newWin = window.open('www.it.pointpark.edu');             
+
+      if(!newWin || newWin.closed || typeof newWin.closed=='undefined'){ 
+          alert('popup is blocked.')
+      }
+    }, false);
+
+    document.body.appendChild(input);
+  </script>
+</body>
+</html>
+
+</script>
+</head>
+<body>
+  See console!<br><br>
+<button>IT @ Point Park University</button>
+</body>
+</html>
